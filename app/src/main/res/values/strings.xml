@@ -1,4 +1,17 @@
 <resources>
     <string name="app_name">Pause-toi</string>
     <string name="title_activity_maps">Map</string>
+    <string name="register_button">Register</string>
+    <string name="login">Login</string>
+    <string name="username">Rustam le Pipi</string>
+    <string name="password">Password</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="email">Email</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="registration_instruction">I do not have a username and password details. Click the button below to register</string>
+    <string name="title_activity_register">RegisterActivity</string>
+    <string name="welcome">WELCOME</string>
+    <string name="is_login">You have been successfully login </string>
+    <string name="sign_up">Sign Up Now</string>
 </resources>
