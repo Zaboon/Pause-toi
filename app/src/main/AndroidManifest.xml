@@ -39,13 +39,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<<<<<<< Updated upstream
+
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" >
         </activity>
-=======
->>>>>>> Stashed changes
     </application>
 
 </manifest>
