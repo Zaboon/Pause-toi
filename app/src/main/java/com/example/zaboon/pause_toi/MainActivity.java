@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.location.LocationManager;
 import android.media.AudioManager;
 import android.os.Bundle;
 import android.provider.Settings;
@@ -31,6 +32,11 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 AudioManager am = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
+                final LocationManager manager = (LocationManager) getSystemService( Context.LOCATION_SERVICE );
+
+                if ( !manager.isProviderEnabled( LocationManager.GPS_PROVIDER ) ) {
+                    buildAlertMessageNoGps();
+                }
                 switch (am.getRingerMode()) {
                     case AudioManager.RINGER_MODE_SILENT:
                         startActivity(intent);
@@ -46,7 +52,7 @@ public class MainActivity extends Activity {
                                 })
                                 .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int which) {
-                                        startActivity(new Intent(android.provider.Settings.ACTION_SOUND_SETTINGS));
+                                        dialog.cancel();
                                     }
                                 })
                                 .setIcon(android.R.drawable.ic_dialog_alert)
@@ -64,7 +70,7 @@ public class MainActivity extends Activity {
                                 })
                                 .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int which) {
-                                        startActivity(new Intent(Settings.ACTION_SOUND_SETTINGS));
+                                       dialog.cancel();
                                     }
                                 })
                                 .setIcon(android.R.drawable.ic_dialog_alert)
@@ -72,6 +78,23 @@ public class MainActivity extends Activity {
                         Log.i("MyApp","Normal mode");
                         break;
                 }
+            }
+            private void buildAlertMessageNoGps() {
+                final AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                builder.setMessage("Your GPS seems to be disabled, do you want to enable it?")
+                        .setCancelable(false)
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            public void onClick(@SuppressWarnings("unused") final DialogInterface dialog, @SuppressWarnings("unused") final int id) {
+                                startActivity(new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS));
+                            }
+                        })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            public void onClick(final DialogInterface dialog, @SuppressWarnings("unused") final int id) {
+                                dialog.cancel();
+                            }
+                        });
+                final AlertDialog alert = builder.create();
+                alert.show();
             }
         });
     }
