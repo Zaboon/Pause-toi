@@ -67,6 +67,19 @@ public class MapsActivity extends FragmentActivity {
             final Marker kiel = googleMap.addMarker(new MarkerOptions().position(KIEL).title("Epitech").snippet("Epitech is not cool").icon(BitmapDescriptorFactory.fromResource(R.drawable.tree)));
             markers.put(kiel.getId(), "http://www.yodot.com/images/jpeg-images-sm.png");
 
+            googleMap.addMarker(new MarkerOptions().position(new LatLng(43.310894, 5.369021)).title("Epitech").snippet("Un endroit trop OKLM").icon(BitmapDescriptorFactory.fromResource(R.drawable.tree)));
+            googleMap.addMarker(new MarkerOptions().position(new LatLng(43.526314,5.445431)).title("Rotonde").snippet("La fontaine de l'amour").icon(BitmapDescriptorFactory.fromResource(R.drawable.tree)));
+            googleMap.addMarker(new MarkerOptions().position(new LatLng(43.521072,5.448428)).title("Parc Jourdan").snippet("Le parc Jourdan est un jardin public d'Aix-en-Provence, situé à proximité immédiate du centre-ville, derrière la faculté de droit de l'université Aix-Marseille III. C'est l'un des plus grands parcs de la ville et certainement le plus emblématique, et l'un des lieux de promenade préfèrés des Aixois.").icon(BitmapDescriptorFactory.fromResource(R.drawable.tree)));
+            googleMap.addMarker(new MarkerOptions().position(new LatLng(43.521812,5.466270)).title("Promenade de la Torse").snippet("Située dans les quartiers est de la Ville, aux abords du ruisseau de la Torse, la promenade de la Torse est comprise entre la Route de Cézanne et la Route de Nice.").icon(BitmapDescriptorFactory.fromResource(R.drawable.tree)));
+            googleMap.addMarker(new MarkerOptions().position(new LatLng(43.530331,5.457883)).title("Parc Rambot").snippet("").icon(BitmapDescriptorFactory.fromResource(R.drawable.tree)));
+            googleMap.addMarker(new MarkerOptions().position(new LatLng(43.280621,5.394722)).title("Parc du 26e centenaire").snippet("").icon(BitmapDescriptorFactory.fromResource(R.drawable.tree)));
+            googleMap.addMarker(new MarkerOptions().position(new LatLng(43.261730,5.370886)).title("Plage du Prado").snippet("").icon(BitmapDescriptorFactory.fromResource(R.drawable.tree)));
+            googleMap.addMarker(new MarkerOptions().position(new LatLng(43.259712,5.380436)).title("Parc Borély").snippet("").icon(BitmapDescriptorFactory.fromResource(R.drawable.tree)));
+            googleMap.addMarker(new MarkerOptions().position(new LatLng(43.529743,5.448503)).title("Th\\\\u00e9 Mandarine").snippet("").icon(BitmapDescriptorFactory.fromResource(R.drawable.tree)));
+            googleMap.addMarker(new MarkerOptions().position(new LatLng(43.302071,5.389748)).title("Teavora").snippet("").icon(BitmapDescriptorFactory.fromResource(R.drawable.tree)));
+            googleMap.addMarker(new MarkerOptions().position(new LatLng(43.244690,5.371280)).title("Plage de la Pointe Rouge").snippet("").icon(BitmapDescriptorFactory.fromResource(R.drawable.tree)));
+            googleMap.addMarker(new MarkerOptions().position(new LatLng(43.305367,5.397866)).title("Parc Longchamp").snippet("").icon(BitmapDescriptorFactory.fromResource(R.drawable.tree)));
+
             googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(EPITECH, 15));
             googleMap.animateCamera(CameraUpdateFactory.zoomTo(10), 2000, null);
             googleMap.setMyLocationEnabled(true);
